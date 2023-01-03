@@ -35,12 +35,19 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// app.get("/allProducts", (req, res) => {
+//   const sql = "SELECT * FROM products";
+//   db.query(sql, (err, results) => {
+//     handleQueryResult(err, results, res);
+//   });
+// });
+
 app.get("/allProducts", (req, res) => {
-  const sql = "SELECT * FROM products";
-  db.query(sql, (err, results) => {
-    handleQueryResult(err, results, res);
-  });
-});
+      const sql = "SELECT * FROM products";
+      db.query(sql, (err, results) => {
+        res.send(results);
+      });
+    });
 
 app.get("/filteredTops", (req, res) => {
   const sql = "SELECT * FROM products WHERE category = 'tops'";
