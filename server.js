@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     handleQueryResult(err, results, res);
 //   });
 // });
-app.get('/', (err, results) => {
+app.get('/', (err, res) => {
     res.send('hi');
 })
 app.get("/allProducts", (req, res) => {
