@@ -41,7 +41,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //     handleQueryResult(err, results, res);
 //   });
 // });
-
+app.get('/', (err, results) => {
+    res.send('hi');
+})
 app.get("/allProducts", (req, res) => {
       const sql = "SELECT * FROM products";
       db.query(sql, (err, results) => {
