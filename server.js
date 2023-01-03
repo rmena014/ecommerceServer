@@ -4,14 +4,9 @@ const cors = require("cors");
 const path = require("path");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
-// const mysqlConfig = require("../mysql-config");
+const mysqlConfig = require("./mysql-config");
 
-const db = mysql.createConnection({
-  host: "ecommercev2.cqwpxjxkqcuo.us-east-1.rds.amazonaws.com",
-  user: "admin",
-  password: "Richjenn014",
-  database: "ecommerce",
-});
+const db = mysql.createConnection(mysqlConfig);
 
 const handleQueryResult = (err, results, res) => {
   if (err) {
